@@ -1,0 +1,331 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "variables";
+@import "mixins";
+
+body {
+  font-family: Raleway;
+  margin: 0;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10vh 10% 0 10%;
+    .navLetf {
+      display: flex;
+      align-items: center;
+      .brand {
+        margin: 0;
+        span {
+          color: $red;
+        }
+      }
+      .phone {
+        color: darkgrey;
+        margin: 0;
+        font-size: 10px;
+      }
+    }
+    .navRight {
+      display: flex;
+      align-items: center;
+      float: right;
+      color: #fff;
+    }
+  }
+}
+
+#first {
+  display: flex;
+  align-items: center;
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 62%;
+    background-color: #eff2f6;
+    .text {
+      margin-left: 10%;
+      p {
+        color: darkgrey;
+        margin: 0;
+        font-size: 10px;
+      }
+    }
+  }
+  .right {
+    height: 100vh;
+    width: 38%;
+    background-color: $red;
+    .rotatedText {
+      color: $red;
+      position: absolute;
+      font-weight: bold;
+      z-index: 0;
+      @include rotate(90deg);
+      font-size: 200px;
+      text-shadow: 0 0 10px #000;
+    }
+  }
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    width: 32%;
+    height: auto;
+    padding-top: 32%;
+    background: white;
+    left: 46%;
+  }
+  img {
+    position: absolute;
+    width: 50%;
+    left: 37%;
+  }
+}
+
+#second {
+  display: flex;
+  align-items: center;
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+    width: 30.75%;
+    background: url("../img/SecondPhotoLeft.png") left center;
+    background-size: 100% 50vh;
+    h3, p {
+      margin: 5px;
+    }
+  }
+  .right {
+    height: 50vh;
+    width: 69.25%;
+    background-image: url("../img/SecondPhotoRight.png");
+    background-size: cover;
+    .voile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      height: 50vh;
+      width: 30.75%;
+      @media (max-width: $tablet) {
+        width: 100%;
+      }
+      background-color: rgba(0,0,0,0.6);
+      h3 {
+        color: #fff;
+      }
+    }
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      height: 50vh;
+      @include rotate(-90deg);
+      p {
+        color: #000;
+        border: 1px solid #3B3B3B;
+        background-color: #fff;
+        border-radius: 40px;
+        padding: 15px 45px 15px 30px;
+        &:hover {
+          background-color: #3B3B3B;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .left, .right {
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+}
+
+#third {
+  h4 {
+    text-align: center;
+  }
+  #features {
+    display: flex;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+    .feature {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 25%;
+      align-items: center;
+      .text {
+        font-size: 20px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+#fourth {
+  display: flex;
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+  .left {
+    height: 50vh;
+    width: 48.5%;
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+    background: url("../img/FourthPhotoLeft.png") left center;
+    background-size: cover;
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+    width: 51.5%;
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+    background-color: #232323;
+    .textDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #fff;
+      h2 {
+        margin: 0;
+      }
+      span {
+        color: $red;
+      }
+      a {
+        text-decoration: none;
+        display: inline-flex;
+        p {
+          color: #fff;
+          border: 1px solid #3B3B3B;
+          border-radius: 40px;
+          padding: 15px 45px 15px 30px;
+          &:hover {
+            background-color: #fff;
+            color: #3B3B3B;
+          }
+        }
+      }
+    }
+    img {
+      height: 80%;
+      align-items: center;
+    }
+  }
+}
+
+#fifth {
+  display: flex;
+  align-items: center;
+  height: 75vh;
+  background: url("../img/Dron.png") no-repeat;
+  background-size: 50% auto;
+  background-position: 110% center;
+  .textDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #000;
+    h2 {
+      margin: 0;
+    }
+    span {
+      color: $red;
+    }
+    a {
+      text-decoration: none;
+      display: inline-flex;
+      p {
+        color: #000;
+        border: 1px solid #3B3B3B;
+        border-radius: 40px;
+        padding: 15px 45px 15px 30px;
+        &:hover {
+          background-color: #3B3B3B;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+#sixth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("../img/SixthBackground.png");
+  background-size: cover;
+  color: #fff;
+  .text {
+    margin-top: 20%;
+    font-size: 48px;
+  }
+  a {
+    text-decoration: none;
+    display: inline-flex;
+    p {
+      color: #000;
+      border: 1px solid #3B3B3B;
+      background-color: #fff;
+      border-radius: 40px;
+      padding: 15px 45px 15px 30px;
+      &:hover {
+        background-color: #3B3B3B;
+        color: #fff;
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  h5 {
+    span {
+      font-size: 30px;
+      color: $red;
+    }
+  }
+  p {
+    font-size: 10px;
+  }
+}
